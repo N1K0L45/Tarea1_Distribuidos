@@ -1,7 +1,7 @@
 import socket
 
 def Main():
-	HOST = 'server'
+	HOST = 'headnode'
 	PORT = 5000
 	count=1
 	flag=True

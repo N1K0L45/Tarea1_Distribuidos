@@ -1,14 +1,44 @@
 version: "3"
 
 services:
-  server:
+  datanode1:
     build:
-      context: ./Server
-    command: python3 /Server/server.py
+      context: ./DataNode1
+    command: python3 /DataNode1/DataNode1.py
     volumes:
-      - ./Server:/Server/
+      - ./DataNode1:/DataNode1/
+    ports:
+      - "1001:1001"
+
+  datanode2:
+    build:
+      context: ./DataNode2
+    command: python3 /DataNode2/DataNode2.py
+    volumes:
+      - ./DataNode2:/DataNode2/
+      - "1002:1002"
+
+  datanode3:
+    build:
+      context: ./DataNode3
+    command: python3 /DataNode3/DataNode3.py
+    volumes:
+      - ./DataNode3:/DataNode3/
+    ports:
+      - "1003:1003"
+
+  headnode:
+    build:
+      context: ./HeadNode
+    command: python3 /HeadNode/HeadNode.py
+    volumes:
+      - ./HeadNode:/HeadNode/
     ports:
       - "5000:5000"
+    depends_on:
+      - datanode1
+      - datanode2
+      - datanode3
 
   client:
     build:
@@ -17,5 +47,5 @@ services:
     volumes:
       - ./Cliente:/Cliente/
     depends_on:
-      - server
+      - headnode
     

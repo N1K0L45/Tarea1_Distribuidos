@@ -1,7 +1,7 @@
 import socket
 
 def Main():
-	HOST = 'server'
+	HOST = 'headnode'
 	PORT = 5000
 	count=1
 	peticiones=[
@@ -11,7 +11,7 @@ def Main():
 		"exit"
 		]
 
-	with open("respuestas.txt","w") as resp:
+	with open("registro_cliente.txt","w") as resp:
 		resp.write("<-Archivo de respuestas recibidas por el servidor->\n\n")
 
 	s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
@@ -22,7 +22,7 @@ def Main():
 	data = s.recv(1024)
 	MSG = str(data.decode('ascii'))
 
-	with open("respuestas.txt","a") as resp:
+	with open("registro_cliente.txt","a") as resp:
 		escribir = "{}. {}\n".format(count,MSG)
 		resp.write(escribir)
 
@@ -34,7 +34,7 @@ def Main():
 		data = s.recv(1024)
 		MSG = str(data.decode('ascii'))
 
-		with open("respuestas.txt","a") as resp:
+		with open("registro_cliente.txt","a") as resp:
 			escribir = "{}. {}\n".format(count,MSG)
 			resp.write(escribir)
 
