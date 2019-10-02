@@ -16,6 +16,7 @@ services:
     command: python3 /DataNode2/DataNode2.py
     volumes:
       - ./DataNode2:/DataNode2/
+    ports:
       - "1002:1002"
 
   datanode3:

@@ -8,6 +8,11 @@ def Main():
 		"primero",
 		"segundo",
 		"tercero",
+		"cuarto",
+		"quinto",
+		"sexto",
+		"septimo",
+		"octavo",
 		"exit"
 		]
 

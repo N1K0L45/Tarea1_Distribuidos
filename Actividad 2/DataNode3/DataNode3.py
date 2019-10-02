@@ -1,13 +1,13 @@
 import socket
 
 def Main():
-	HOST = 'headnode'
-	PORT = 5000
+	HOST = 'datanode3'
+	PORT = 1003
 	count=1
 	flag=True
 
-	with open("log.txt", "w") as log:
-		log.write("<-Archivo de registro, formato 'Mensaje::IP'->\n\n")
+	with open("data.txt", "w") as log:
+		log.write("<-Registro de mensajes->\n\n")
 
 	s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 	s.bind((HOST, PORT))
@@ -20,8 +20,7 @@ def Main():
 	s.listen(5)
 	print("Socket escuchando...")
 
-	c, addr = s.accept()
-	print("Conectado a: ", addr[0], ':', addr[1])
+	c,addr = s.accept()
 
 
 	while(flag):
@@ -29,13 +28,13 @@ def Main():
 		MSG = data.decode()
 		print("Mensaje recibido: ",MSG)
 
-		with open("log.txt","a") as log:
-			escribir = "{}. {}::{}\n".format(count, MSG, addr[0])
+		with open("data.txt","a") as log:
+			escribir = "{}. {}\n".format(count, MSG)
 			log.write(escribir)
 	
 		if(MSG=="exit"):
-			data = "Chao amiwo"
-			c.send(data.encode('ascii'))
+			data = "Chawo amiwo"
+			#c.send(data.encode('ascii'))
 			break
 
 		data = "Mensaje recibido, amiwo"
