@@ -6,15 +6,15 @@ Debe encontrarse en el directorio raíz de la actividad que desee correr, con la
 ```
 ├─Tarea1_Distribuidos
   ├──Actividad 1
-  |  ├──Cliente
-  |  ├──Server
-  |  └──docker-compose.yml
+  │  ├──Cliente
+  │  ├──Server
+  │  └──docker-compose.yml
   ├──Actividad 2
-  |  ├──Cliente
-  |  ├──DataNode1
-  |  ├──DataNode2
-  |  ├──DataNode3
-  |  ├──HeadNode
-  |  └──docker-compose.yml
+  │  ├──Cliente
+  │  ├──DataNode1
+  │  ├──DataNode2
+  │  ├──DataNode3
+  │  ├──HeadNode
+  │  └──docker-compose.yml
   └──README.md
  ```
