@@ -1,5 +1,6 @@
 # Tarea1 Distribuidos
-Tarea 1 Sistemas Distribuidos 2019-2  
+Tarea 1 Sistemas Distribuidos 2019-2    
+
 Nicolás Acevedo Y.	201573512-3  
 Vicente Yagui R.	201560560-2
 
