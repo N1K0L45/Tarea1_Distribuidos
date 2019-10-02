@@ -54,5 +54,7 @@ Los archivos de registro (o _data logs_) de cada actividad se encuentran en el d
   └──README.md
  ```
 
- # Consideraciones Importants
+ # Consideraciones Importantes
  - Los mensajes que el cliente envía están indicados en el código, y se le especifican mediante la lista ``peticiones``.
+ - La actividad 2 no finaliza automáticamente, ya que se encuentra realizando multicasting cada 5 segundos de manera infinita. Por ende, debe cancelarse manualmente (``Ctrl + C``, dos veces para terminar también el proceso de Docker).
+ - Recordar que la primera vez que se construye el proyecto se demora un poco más, debido a que debe descargar la imagen de Ubuntu para funcionar.
