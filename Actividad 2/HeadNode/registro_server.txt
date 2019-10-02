@@ -1,11 +1,11 @@
 <-Archivo de registro, formato 'Mensaje::IP'->
 
 1. Hola Serviduwu!::datanode1
-2. primero::datanode3
-3. segundo::datanode3
+2. primero::datanode1
+3. segundo::datanode1
 4. tercero::datanode2
-5. cuarto::datanode2
-6. quinto::datanode3
+5. cuarto::datanode3
+6. quinto::datanode1
 7. sexto::datanode3
-8. septimo::datanode3
-9. octavo::datanode2
+8. septimo::datanode2
+9. octavo::datanode3

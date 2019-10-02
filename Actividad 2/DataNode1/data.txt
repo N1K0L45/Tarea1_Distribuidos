@@ -1,4 +1,7 @@
 <-Registro de mensajes->
 
 1. Hola Serviduwu!
-2. exit
+2. primero
+3. segundo
+4. quinto
+5. exit

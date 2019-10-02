@@ -1,6 +1,6 @@
 import socket
 import random
-import sys
+import sys, os
 
 def Main():
 	HOST = 'headnode'
@@ -28,14 +28,6 @@ def Main():
 	s1.connect((HOST1,PORT1))
 	s2.connect((HOST2,PORT2))
 	s3.connect((HOST3,PORT3))
-
-	#pinga = os.system('ping'+datanode1)
-	#if(pinga==0):
-	#	with open("registro_server.txt","a") as log:
-	#		log.write("Servidor arriba")
-	#else:
-	#	with open("registro_server.txt","a") as log:
-	#		log.write("Servidor abajo")
 
 	s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 	s.bind((HOST, PORT))

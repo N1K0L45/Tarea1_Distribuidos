@@ -1,8 +1,6 @@
 <-Registro de mensajes->
 
-1. primero
-2. segundo
-3. quinto
-4. sexto
-5. septimo
-6. exit
+1. cuarto
+2. sexto
+3. octavo
+4. exit
