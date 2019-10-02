@@ -19,3 +19,11 @@ El proyecto tiene la siguiente estrucutra:
   └──README.md
  ```
  Cada Actividad tiene su propio archivo ``docker-compose``, por ende, debe situarse en el directorio de la actividad que desee correr. Por ejemplo, para correr la Actividad 1, debe estar en ``/Tarea1_Distribuidos/Actividad1/``.
+
+### Ejecución de una Actividad
+Para ejecutar una actividad, solamente debe usar los comandos
+```
+$ docker-compose build
+$ docker-compose up
+```
+situado obviamente en el directorio de la actividad a ejecutar, como se indicó anteriormente.
