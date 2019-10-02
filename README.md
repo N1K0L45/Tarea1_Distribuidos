@@ -2,7 +2,7 @@
 Tarea 1 Sistemas Distribuidos 2019-2
 
 ## Instrucciones de uso
-Debe encontrarse en el directorio raíz de la actividad que desee correr, con la siguiente estructura:
+El proyecto tiene la siguiente estrucutra:
 ```
 ├─Tarea1_Distribuidos
   ├──Actividad 1
@@ -18,3 +18,4 @@ Debe encontrarse en el directorio raíz de la actividad que desee correr, con la
   │  └──docker-compose.yml
   └──README.md
  ```
+ Cada Actividad tiene su propio archivo ``docker-compose``, por ende, debe situarse en el directorio de la actividad que desee correr. Por ejemplo, para correr la Actividad 1, debe estar en ``Tarea1_Distribuidos/Actividad1/``.
