@@ -12,17 +12,15 @@ def mc():
 	ttl = struct.pack('b', 1)
 	sock.setsockopt(socket.IPPROTO_IP, socket.IP_MULTICAST_TTL, ttl)
 
-	print("holacocos")
 
 	with open("heartbeat_server.txt", "w") as log:
 		log.write("<-Registro multicasting->\n\n")
-
 
 	mensaje = "tasbien?"
 	
 
 	while True:
-		print("mandando mensajuwu")
+
 		sent = sock.sendto(mensaje.encode('ascii'), multicast_group)
 		
 		while True:
