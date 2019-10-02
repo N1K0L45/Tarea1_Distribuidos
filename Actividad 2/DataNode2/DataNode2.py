@@ -14,7 +14,6 @@ def mc():
 	sock.setsockopt(socket.IPPROTO_IP, socket.IP_ADD_MEMBERSHIP, mreq)
 
 	while True:
-		print("asperando")
 		data, address = sock.recvfrom(1024)
 		ack = 'ack1'
 		sock.sendto(ack.encode('ascii'), address)
@@ -54,7 +53,6 @@ def Main():
 	
 		if(MSG=="exit"):
 			data = "Chawo amiwo"
-			#c.send(data.encode('ascii'))
 			break
 
 		data = "Mensaje recibido, amiwo"
