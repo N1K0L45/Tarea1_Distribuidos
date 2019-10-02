@@ -1,7 +1,4 @@
 <-Registro de mensajes->
 
-1. primero
-2. segundo
-3. cuarto
-4. sexto
-5. exit
+1. quinto
+2. exit

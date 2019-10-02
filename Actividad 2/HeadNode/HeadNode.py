@@ -1,6 +1,51 @@
 import socket
 import random
+import struct
 import sys, os
+from threading import Thread
+import time
+
+def mc():
+	multicast_group = ('224.3.29.71', 10000)
+	sock = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
+	sock.settimeout(0.2)
+	ttl = struct.pack('b', 1)
+	sock.setsockopt(socket.IPPROTO_IP, socket.IP_MULTICAST_TTL, ttl)
+
+	print("holacocos")
+
+	with open("heartbeat_server.txt", "w") as log:
+		log.write("<-Registro multicasting->\n\n")
+
+
+	mensaje = "tasbien?"
+	
+
+	while True:
+		print("mandando mensajuwu")
+		sent = sock.sendto(mensaje.encode('ascii'), multicast_group)
+		
+		while True:
+
+			try:
+				data, server = sock.recvfrom(16)
+				with open("heartbeat_server.txt", "a") as log:
+					escribir = "{}. {}\n".format(data , server)
+					log.write(escribir)
+
+
+
+			except socket.timeout:
+				with open("heartbeat_server.txt", "a") as log:
+					log.write("timeout \n")
+				break
+        
+		time.sleep(5)
+
+
+
+
+
 
 def Main():
 	HOST = 'headnode'
@@ -11,12 +56,12 @@ def Main():
 	with open("registro_server.txt", "w") as log:
 		log.write("<-Archivo de registro, formato 'Mensaje::IP'->\n\n")
 
-	with open("heartbeat_server.txt", "w") as log:
-		log.write("<-Registro multicasting->\n\n")
+	
 
 	s1 = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 	s2 = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 	s3 = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+
 	HOST1 = 'datanode1'
 	HOST2 = 'datanode2'
 	HOST3 = 'datanode3'
@@ -28,6 +73,8 @@ def Main():
 	s1.connect((HOST1,PORT1))
 	s2.connect((HOST2,PORT2))
 	s3.connect((HOST3,PORT3))
+
+
 
 	s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 	s.bind((HOST, PORT))
@@ -95,4 +142,13 @@ def Main():
 	s2.close()
 	s3.close()
 
-Main()
+th1 = Thread(target=Main,args=[])
+th2 = Thread(target=mc,args=[])
+
+th2.start()
+th1.start()
+
+th2.join()
+th1.join()
+
+

@@ -1,4 +1,24 @@
 import socket
+import struct
+import sys
+from threading import Thread
+
+def mc():
+
+	multicast_group = '224.3.29.71'
+	server_address = ('', 10000)
+	sock = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
+	sock.bind(server_address)
+	group = socket.inet_aton(multicast_group)
+	mreq = struct.pack('4sL', group, socket.INADDR_ANY)
+	sock.setsockopt(socket.IPPROTO_IP, socket.IP_ADD_MEMBERSHIP, mreq)
+
+	while True:
+		print("asperando")
+		data, address = sock.recvfrom(1024)
+		ack = 'ack1'
+		sock.sendto(ack.encode('ascii'), address)
+
 
 def Main():
 	HOST = 'datanode3'
@@ -44,4 +64,11 @@ def Main():
 	
 	s.close()
 
-Main()
+th1 = Thread(target=Main,args=[])
+th2 = Thread(target=mc,args=[])
+
+th2.start()
+th1.start()
+
+th2.join()
+th1.join()

@@ -1,5 +1,7 @@
 # Tarea1 Distribuidos
 Tarea 1 Sistemas Distribuidos 2019-2
+Nicolás Acevedo Y.	201573512-3
+Vicente Yagui R.	201560560-2
 
 ## Instrucciones de uso
 El proyecto tiene la siguiente estrucutra:
@@ -27,3 +29,27 @@ $ docker-compose build
 $ docker-compose up
 ```
 situado obviamente en el directorio de la actividad a ejecutar, como se indicó anteriormente.
+
+## Ubicación de archivos de Registro
+Los archivos de registro (o _data logs_) de cada actividad se encuentran en el directorio de cada servicio, tal y como se indicó en el enunciado. A continuación se presenta una estructura de los directorios, mostrando solamente los nombres de los archivos:
+```
+├─Tarea1_Distribuidos
+  ├──Actividad 1
+  │  ├──Cliente
+  │  │  └─respuestas.txt
+  │  └──Server
+  │     └─log.txt
+  ├──Actividad 2
+  │  ├──Cliente
+  │  │  └─registro_cliente.txt  
+  │  ├──DataNode1
+  │  │  └─data.txt
+  │  ├──DataNode2
+  │  │  └─data.txt
+  │  ├──DataNode3
+  │  │  └─data.txt
+  │  └──HeadNode
+  │     ├─heartbeat_server.txt
+  │     └─resgistro_server.txt
+  └──README.md
+ ```
