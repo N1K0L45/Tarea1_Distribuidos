@@ -18,4 +18,4 @@ El proyecto tiene la siguiente estrucutra:
   │  └──docker-compose.yml
   └──README.md
  ```
- Cada Actividad tiene su propio archivo ``docker-compose``, por ende, debe situarse en el directorio de la actividad que desee correr. Por ejemplo, para correr la Actividad 1, debe estar en ``Tarea1_Distribuidos/Actividad1/``.
+ Cada Actividad tiene su propio archivo ``docker-compose``, por ende, debe situarse en el directorio de la actividad que desee correr. Por ejemplo, para correr la Actividad 1, debe estar en ``/Tarea1_Distribuidos/Actividad1/``.
