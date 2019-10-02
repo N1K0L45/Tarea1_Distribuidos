@@ -5,7 +5,7 @@ import sys, os
 def Main():
 	HOST = 'headnode'
 	PORT = 5000
-	count=1
+	count=0
 	flag=True
 
 	with open("registro_server.txt", "w") as log:
@@ -42,8 +42,16 @@ def Main():
 
 	c, addr = s.accept()
 	print("Conectado a: ", addr[0], ':', addr[1])
-
-
+	data = c.recv(1024)
+	MSG = data.decode()
+	print("Mensaje recibido: ",MSG)
+	with open("registro_server.txt","a") as log:
+		escribir = "{}. {}::{}\n".format(count, MSG, HOST)
+		log.write(escribir)
+	data = "Mensaje recibido, amiwo"
+	c.send(data.encode('ascii'))
+	count+=1
+	
 	while(flag):
 		data = c.recv(1024)
 		MSG = data.decode()
